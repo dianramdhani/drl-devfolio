@@ -1,5 +1,5 @@
 <?php
-class DRLDevFolioCustomize
+class DRLDevFolioCustomizeHero
 {
     public function __construct()
     {

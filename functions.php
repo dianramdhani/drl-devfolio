@@ -18,5 +18,5 @@ function drl_devfolio_enqueue_styles_scripts()
 }
 add_action('wp_enqueue_scripts', 'drl_devfolio_enqueue_styles_scripts');
 
-require_once get_template_directory() . '/classes/class-drl-devfolio-customize.php';
-new DRLDevFolioCustomize();
+require_once get_template_directory() . '/classes/class-drl-devfolio-customize-hero.php';
+new DRLDevFolioCustomizeHero();
