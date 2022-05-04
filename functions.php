@@ -1,5 +1,4 @@
 <?php
-
 function drl_devfolio_enqueue_styles_scripts()
 {
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/vendor/bootstrap/css/bootstrap.min.css');
@@ -18,5 +17,12 @@ function drl_devfolio_enqueue_styles_scripts()
 }
 add_action('wp_enqueue_scripts', 'drl_devfolio_enqueue_styles_scripts');
 
+// Helper Functions
+require_once get_template_directory() . '/classes/class-drl-devfolio-field-customize-generator.php';
+
+// Setup Customizer
 require_once get_template_directory() . '/classes/class-drl-devfolio-customize-hero.php';
 new DRLDevFolioCustomizeHero();
+
+require_once get_template_directory() . '/classes/class-drl-devfolio-customize-about.php';
+new DRLDevFolioCustomizeAbout();
