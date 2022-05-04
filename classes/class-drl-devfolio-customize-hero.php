@@ -3,10 +3,10 @@ class DRLDevFolioCustomizeHero
 {
     public function __construct()
     {
-        add_action('customize_register', array($this, 'form_hero'));
+        add_action('customize_register', array($this, 'register'));
     }
 
-    public function form_hero($wp_customize)
+    public function register($wp_customize)
     {
         $section = 'hero';
         $wp_customize->add_section($section, array(
@@ -14,7 +14,7 @@ class DRLDevFolioCustomizeHero
             'priority' => 35,
         ));
 
-        $this->generate_field(array(
+        DRLDevFolioFieldCustomizeGenerator::text(array(
             'wp_customize' => $wp_customize,
             'section' => $section,
             'type' => 'text',
@@ -23,7 +23,7 @@ class DRLDevFolioCustomizeHero
             'default' => 'Morgan Freeman',
         ));
 
-        $this->generate_field(array(
+        DRLDevFolioFieldCustomizeGenerator::text(array(
             'wp_customize' => $wp_customize,
             'section' => $section,
             'type' => 'textarea',
@@ -32,7 +32,7 @@ class DRLDevFolioCustomizeHero
             'default' => 'Designer, Developer, Freelancer, Photographer',
         ));
 
-        $this->generate_field(array(
+        DRLDevFolioFieldCustomizeGenerator::text(array(
             'wp_customize' => $wp_customize,
             'section' => $section,
             'type' => 'text',
@@ -41,7 +41,7 @@ class DRLDevFolioCustomizeHero
             'default' => 'Hire Me',
         ));
 
-        $this->generate_field(array(
+        DRLDevFolioFieldCustomizeGenerator::text(array(
             'wp_customize' => $wp_customize,
             'section' => $section,
             'type' => 'text',
@@ -50,32 +50,12 @@ class DRLDevFolioCustomizeHero
             'default' => '#contact',
         ));
 
-        $wp_customize->add_setting('hero_bg_image', array(
-            'default' => get_template_directory_uri() . '/assets/img/hero-bg.jpg',
-            'transport' => 'refresh',
-        ));
-
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_bg_image', array(
-            'label' => 'Background Image',
+        DRLDevFolioFieldCustomizeGenerator::image(array(
+            'wp_customize' => $wp_customize,
             'section' => $section,
-            'settings' => 'hero_bg_image',
-        )));
-    }
-
-    private function generate_field($args)
-    {
-        extract($args);
-        $setting_id = $section . '_' . $setting;
-
-        $wp_customize->add_setting($setting_id, array(
-            'default' => $default,
-            'transport' => 'refresh',
-        ));
-
-        $wp_customize->add_control($setting_id, array(
-            'label' => __($label),
-            'section' => $section,
-            'type' => $type,
+            'setting' => 'bg_image',
+            'label' => 'Image',
+            'default' => get_template_directory_uri() . '/assets/img/hero-bg.jpg'
         ));
     }
 }
