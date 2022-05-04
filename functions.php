@@ -29,3 +29,6 @@ new DRLDevFolioCustomizeAbout();
 
 require_once get_template_directory() . '/classes/class-drl-devfolio-customize-counter.php';
 new DRLDevfolioCustomizeCounter();
+
+require_once get_template_directory() . '/classes/class-drl-devfolio-customize-contact.php';
+new DRLDevFolioCustomizeContact();
