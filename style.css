@@ -8,3 +8,9 @@ Author: Dian Ramdhani Lubis
 Author URI: https://github.com/dianramdhani
 Theme URI: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template
 */
+
+.ico-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
