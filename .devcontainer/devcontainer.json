@@ -19,7 +19,10 @@
         "editor.bracketPairColorization.enabled": true,
         "editor.guides.bracketPairs": "active",
         "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "[php]": {
+            "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+        }
     },
     "onCreateCommand": "apt update && apt install -y git"
 }

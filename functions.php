@@ -17,3 +17,6 @@ function drl_devfolio_enqueue_styles_scripts()
     wp_enqueue_script('devfolio', get_template_directory_uri() . '/assets/js/main.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'drl_devfolio_enqueue_styles_scripts');
+
+require_once get_template_directory() . '/classes/class-drl-devfolio-customize.php';
+new DRLDevFolioCustomize();

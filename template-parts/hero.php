@@ -1,13 +1,13 @@
 <!-- ======= Hero Section ======= -->
-<div id="hero" class="hero route bg-image" style="background-image: url(<?= get_template_directory_uri(); ?>/assets/img/hero-bg.jpg)">
+<div id="hero" class="hero route bg-image" style="background-image: url(<?= get_theme_mod('hero_bg_image'); ?>)">
     <div class="overlay-itro"></div>
     <div class="hero-content display-table">
         <div class="table-cell">
             <div class="container">
-                <!--<p class="display-6 color-d">Hello, world!</p>-->
-                <h1 class="hero-title mb-4">I am Morgan Freeman</h1>
-                <p class="hero-subtitle"><span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
-                <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+                <p class="display-6 color-d">Hai, I am</p>
+                <h1 class="hero-title mb-4"><?= get_theme_mod('hero_name'); ?></h1>
+                <p class="hero-subtitle"><span class="typed" data-typed-items="<?= get_theme_mod('hero_passions', 'Designer, Developer, Freelancer, Photographer'); ?>"></span></p>
+                <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="<?= get_theme_mod('hero_cta_link'); ?>" role="button"><?= get_theme_mod('hero_cta_text'); ?></a></p>
             </div>
         </div>
     </div>
